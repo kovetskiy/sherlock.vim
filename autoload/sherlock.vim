@@ -55,7 +55,7 @@ function sherlock#complete(direction)
 		let separator = cmdtype
 
 		if cmdtype == ':' && pattern =~ '\/.\{-}$'
-			let pattern = substitute(pattern, '^.*\/\(.\{-}\)$', '\1', '')
+			let pattern = substitute(pattern, '^.*\/\(\\[a-zA-Z]\)*\(.\{-}\)$', '\2', '')
 			let separator = '/'
 		endif
 
